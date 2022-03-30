@@ -7,8 +7,10 @@ public class FindOccurance {
 	static boolean flag = true;
 	
 	static void findOccarance(String str,char ch,int index) {
-		if(index == str.length())
+		if(index == str.length()) {
+			System.out.println("first and last occarance is "+first+" "+last);
 			return;
+		}
 		
 		if(str.charAt(index) == ch) {
 			if(first == -1) {
@@ -18,10 +20,10 @@ public class FindOccurance {
 			}
 		}
 		findOccarance(str,ch,index+1);
-		if(flag) {
-			System.out.println("first and last occarance is "+first+" "+last);
-			flag=false;
-		}
+//		if(flag) {
+//			System.out.println("first and last occarance is "+first+" "+last);
+//			flag=false;
+//		}
 		
 	}
 	
