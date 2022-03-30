@@ -1,7 +1,7 @@
 package java_programs;
 import java.util.*;
 
-public class FindOccarance {
+public class FindOccurance {
 
 	static int first = -1, last = -1;
 	static boolean flag = true;
