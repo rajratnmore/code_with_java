@@ -21,7 +21,7 @@ public class ToweOfHanoi {
 		
 		towerOfHanoi(n, "S","H","D");
 		System.out.println("count is "+count);
-
+		sc.close();
 	}
 
 }
