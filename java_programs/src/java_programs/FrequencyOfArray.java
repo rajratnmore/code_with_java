@@ -11,7 +11,7 @@ public class FrequencyOfArray {
 		for(int i=0; i<arr.length; i++) {
 			mp.put(arr[i],0);
 		}
-//		System.out.println(mp);
+
 		
 		for(int i=0; i<arr.length; i++) {
 			for(Map.Entry<Integer, Integer> e : mp.entrySet()) {
