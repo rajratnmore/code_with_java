@@ -1,11 +1,20 @@
 package java_programs;
+import java.util.*;
+import java.util.Arrays;
+
 public class Practice {	
 	
-	public static void main(String[] args) {
-		int arr[] = new int[5];
-		
-		for(int i=0; i<arr.length; i++)
-			System.out.println(arr[i]);
 	
+	public static void main(String[] args) {
+		
+		List<Integer> arr = new ArrayList<>();
+		arr.add(20);
+		arr.add(30);
+		arr.add(40);
+		
+		
+		System.out.println(arr);
+		
+		
 	}
 }
