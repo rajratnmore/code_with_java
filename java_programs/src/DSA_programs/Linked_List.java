@@ -2,6 +2,7 @@ package DSA_programs;
 
 public class Linked_List {
 	Node head;
+	private int size=0;
 	
 	// New Node creation
 	class Node{
@@ -19,36 +20,41 @@ public class Linked_List {
 		
 		Node n = new Node(data);
 		
-		if(head == null)
+		if(head == null) {
 			head = n;
-		else if(head.next == null)
+			size++;
+		}else if(head.next == null) {
 			head.next = n;
-		else {
+			size++;
+		}else {
 			Node temp = head;
 			while(temp.next != null) {
 				temp = temp.next;
 			}
 			temp.next = n;
+			size++;
 		}		
 		
-	}
+	} 
 	
 	// Add new node into Linked List at First
 	void addNodeFirst(String data) {
 		
 		Node n = new Node(data);
 		
-		if(head == null)
+		if(head == null) {
 			head = n;
-		else {
+			size++;
+		}else {
 			n.next = head;
 			head = n;
+			size++;
 		}
 	}
 	
 	// Get Linked List 
 	void getNode() {		
-		if(head == null)
+		if(head == null) 
 			System.out.println("List is empty");
 		else if(head.next == null)
 			System.out.print(head.data+" -> "+head.next);
@@ -90,8 +96,10 @@ public class Linked_List {
 	void removeNodeLast() {
 		if(head == null)
 			System.out.println("Linked List is empty");
-		else if(head.next == null) 
+		else if(head.next == null) {
 			head = null;
+			size--;
+		}
 		else {
 			Node temp = head;
 			Node t = null;
@@ -100,6 +108,7 @@ public class Linked_List {
 				temp = temp.next;
 			}
 			t.next = null;
+			size--;
 		}
 	}
 	
@@ -107,10 +116,13 @@ public class Linked_List {
 	void removeNodeFirst() {
 		if(head == null)
 			System.out.println("List is Empty");
-		else if(head.next == null) 
+		else if(head.next == null) {
 			head = null;			
+			size--;
+		}
 		else {
 			head = head.next;
+			size--;
 		}
 	}
 	
@@ -143,6 +155,7 @@ public class Linked_List {
 	// List Clear
 	void clearList() {
 		head = null;
+		size=0;
 	}
 	
 	// Contains
@@ -170,6 +183,15 @@ public class Linked_List {
 		}		
 	}
 	
+	// Size of List
+	int getSize() {
+		System.out.println(size);
+		return size;
+	}
+	
+	Node getHead() {
+		return head;
+	}
 	public static void main(String[] args) {
 		
 		Linked_List li = new Linked_List();
@@ -179,12 +201,9 @@ public class Linked_List {
 		li.addNodeLast("Nirya");	
 		li.addNodeLast("Rohit");	
 		li.addNodeFirst("Narendra");
-		li.getNode();			
-		if(li.isContains("Narendra1"))
-			System.out.println("present");
-		else
-			System.out.println("not present");
-		li.getNode();
+		li.getNode();	
+		li.getSize();
+		
 	}
 
 }
