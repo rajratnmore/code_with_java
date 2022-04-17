@@ -1,30 +1,38 @@
 
 package DSA_programs;
+import java.util.*;
+import java.util.Arrays;
 
 class Practice {
 	
-	static void fun(int arr[]) {
+	static void fun(String str) {
 		
-//		System.out.println("The array is ");
-		int end = arr.length-1;
-		for(int i=0; i<arr.length/2; i++) {
-			int temp = arr[i];
-			arr[i] = arr[end];
-			arr[end] = temp;	
-			end--;
+		String newStr[] = new String[str.length()*(str.length()+1)/2];
+		int count=0;
+		for(int i=0; i<str.length(); i++) {
+			
+			for(int j=i; j<str.length(); j++) {
+				newStr[count++] = str.substring(i,j+1);				
+			}
+			
 		}
 		
-		System.out.println("Swapped array is ");
-		for(int a : arr)
-			System.out.print(" "+a);
+		System.out.println("Subsets are");
+		
+		for(String i : newStr)
+			System.out.println(i);
+		
 		
 	}
 	
 	public static void main(String[] args) {
 		
-		int arr[] = new int[] {1,2,35,4,5,6,7,8};
-		fun(arr);
+		Scanner sc = new Scanner(System.in);
 		
-				
+		int arr[] = new int[] {1,2,3,2,5,4,3,6,7,8,9,8};
+		String str = "FUN";
+		str = str.toLowerCase();
+		fun(str);		
+		
 	}
 }
